@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="">
+        <div class="alert alert-primary">Check out the FAQ and Blog Post <a routerLink="faq">here</a></div>
+        <p> 💎💎 Loot available:
+          <span *ngFor="let x of chest | keyvalue">
+            {{x.value}} {{addressToName(x.key)}}
+          </span>
+          💎💎</p>
+      </div>
+      <main class="text-center mt-5 mb-5">
+        <p class="dm-icon">🧙🏼‍♂️</p>
+        <h1 class="dm">Dungeon Master</h1>
+        <h3 class="dm-sub">Only the bravest get the biggest rewards!</h3>
+      </main>
+      <div class="d-flex align-self-center">
+        <div class="big-block p-3">
+          <table class="table table-borderless">
+            <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Pending</th>
+              <th scope="col">In Inventory</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let token of pendingTokens">
+              <td class="p-05">{{token.name}}</td>
+              <td class="p-05">{{token.pendingAmount}}</td>
+              <td class="p-05">{{token.balance}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="size24"></div>
+        <div class="big-block p-3">
+          <table class="table table-borderless">
+            <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Total Supply</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let token of totalSupplyMap| keyvalue">
+              <td class="p-05">{{addressToName(token.key)}}</td>
+              <td class="p-05">{{token.value}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

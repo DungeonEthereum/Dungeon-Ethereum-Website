@@ -1,0 +1,12 @@
+<div class="container">
+  <ul class="" >
+    <li class="faq">
+      <p class="question">Is there a Medium post?</p>
+      <p class="answer">Yes <a href="https://medium.com/@dungeon_master_eth/the-dungeon-experience-8cffb201d9af">here</a>.</p>
+    </li>
+    <li class="faq" *ngFor="let faq of faqs" style="">
+      <p class="question">{{faq.question}}</p>
+      <p class="answer">{{faq.answer}}</p>
+    </li>
+  </ul>
+</div>

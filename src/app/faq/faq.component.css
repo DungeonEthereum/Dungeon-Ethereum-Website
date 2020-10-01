@@ -1,0 +1,14 @@
+li.faq {
+
+}
+
+.question {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.answer {
+  font-style: italic;
+  font-weight: 300;
+}
