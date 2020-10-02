@@ -374,7 +374,6 @@ export class EthService {
         return this.dm.normalPending(poolId.substr(1), account).then(async value => {
           const address = value[1];
           const balance = await this.getBalance(address);
-          console.log(balance);
           return new Token(TokenConverter.convert(address), this.bnToNumber(value[0]), 0, balance, address);
         });
       case PoolType.Burn:
@@ -396,8 +395,13 @@ export class EthService {
     const tokens: Token[] = [];
     for (const pool of pools) {
       const token = await (this.getPendingToken(pool.id));
-      console.log(token);
-      tokens.push(token);
+      const foundToken = tokens.find(value => value.address === token.address);
+      if (foundToken) {
+        foundToken.balance += token.balance;
+      }
+      else {
+        tokens.push(token);
+      }
     }
     return tokens;
   }
