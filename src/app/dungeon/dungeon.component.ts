@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Pool, pools} from '../Pool';
-import {EthService} from '../services/eth.service';
-import {Addresses} from '../Addresses';
+import {pools} from '../Pool';
 
 @Component({
   selector: 'app-dungeon',
@@ -10,14 +8,10 @@ import {Addresses} from '../Addresses';
 })
 export class DungeonComponent implements OnInit {
 
-  constructor(private ethService: EthService) { }
+  constructor() { }
 
-  allPools = pools;
+  allPools = pools.filter(value => !value.deprecated);
 
   ngOnInit(): void {
-    // this.update().then(r => {});
-  }
-
-  async update() {
   }
 }

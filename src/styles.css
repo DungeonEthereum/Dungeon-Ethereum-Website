@@ -1,0 +1,115 @@
+/* color bg = c9d6df */
+/* color border = 52616b */
+/* color shadow = f0f5f9 */
+/* color font header = 1e2022 */
+/* color font text = 1e2022 */
+
+h1.dm {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h3.dm-sub {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h4.dm-sub2 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.dm-icon {
+  font-size: 120px;
+  margin-bottom: 0;
+}
+
+.big-block {
+  box-shadow: rgb(240, 245, 249) 1px 1px 0px inset;
+  display: flex;
+  flex-direction: column;
+  background: rgb(201, 214, 223);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(82, 97, 107);
+  border-image: initial;
+  border-radius: 12px;
+  flex: 1 1 0%;
+}
+
+div.size24 {
+  height: 24px;
+  width: 24px;
+}
+
+.cell {
+  margin: 12px;
+  box-shadow: rgb(247, 244, 242) 1px 1px 0px inset;
+  display: flex;
+  flex-direction: column;
+  background: rgb(201, 214, 223);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(82, 97, 107);
+  border-image: initial;
+  border-radius: 12px;
+  flex: 0 0 30%;
+  padding: 16px;
+  text-align: center;
+}
+
+.cell-icon {
+  background-color: rgb(201, 214, 223);
+  font-size: 36px;
+  height: 80px;
+  width: 80px;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  box-shadow: rgb(236, 241, 245) 4px 4px 8px inset, rgb(240, 245, 249) -6px -6px 12px inset;
+  border-radius: 40px;
+  margin: 0px auto 16px;
+}
+
+.cell-header {
+  color: rgb(30, 32, 34);
+  font-size: 30px;
+  font-weight: 700;
+  margin: 8px 0px 0px;
+  padding: 0px;
+  font-family: OldLondon, serif;
+}
+
+.cell-text {
+  color: rgb(30, 32, 34);
+}
+
+button.cell-button {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(201, 214, 223);
+  box-shadow: rgb(240, 245, 249) 6px 6px 12px, rgb(240, 245, 249) -12px -12px 24px -2px;
+  color: rgb(30, 32, 34);
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  font-weight: 700;
+  height: 56px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 12px;
+  outline: none;
+}
+
+button.cell-button:hover {
+  background-color: rgb(240, 245, 249);
+}

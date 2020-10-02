@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <main class="text-center">
+        <p class="dm-icon">{{pool.icon}}</p>
+        <h1 class="dm">{{pool.header}}</h1>
+        <h3 class="dm-sub">{{pool.text}}</h3>
+        <h4 class="dm-sub2">This spell adds the same amount of all three resources. Therefore, the maximum amount you can add at a single time is as
+          much as whatever resource you have the least of.</h4>
+        <h3 class="alert alert-danger" *ngIf="pool.deprecated">Withdraw from this pool, migrate to the new pool!</h3>
+      </main>
+      <div class="mt-5">
+        <div class="row justify-content-center">
+          <div class="col-4 cell">
+            <div class="cell-icon">{{pool.icon}}</div>
+            <h4 class="cell-header" *ngIf="token">{{token.pendingAmount}}</h4>
+            <p class="cell-text" *ngIf="token">{{token.name}}</p>
+            <div class="size24"></div>
+            <button class="cell-button" (click)="collect()">
+              Collect
+            </button>
+          </div>
+          <div class="col-4 cell">
+            <div class="cell-icon">🧙🏼</div>
+            <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount}}</h4>
+            <p class="cell-text">Token staked</p>
+            <p><span *ngFor="let balance of balances">{{balance.tokenName}}: {{balance.tokenBalance}}<br></span></p>
+            <div class="size24"></div>
+            <div class="row justify-content-between" style="padding: 0 16px">
+              <button class="cell-button" (click)="approve()" *ngIf="!approved">
+                Approve
+              </button>
+              <button *ngIf="approved" class="cell-button w-45" (click)="deposit()">
+                +
+              </button>
+              <button *ngIf="approved" class="cell-button w-45" (click)="withdraw()">
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

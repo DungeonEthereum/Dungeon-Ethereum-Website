@@ -1,0 +1,40 @@
+.nav-custom {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 72px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+}
+
+span.dungeon-master {
+  font-size: 2rem;
+}
+
+li a {
+  color: rgb(82, 97, 107);
+  font-weight: 700;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  color: rgb(201, 214, 223);
+}
+
+li a:hover {
+  color: rgb(164, 176, 183);
+}
+
+.navbar-brand {
+  font-family: OldLondon, serif;
+  font-size: 1.75rem;
+  color: coral;
+}
+
+.badge-dungeon {
+  background-color: coral;
+}

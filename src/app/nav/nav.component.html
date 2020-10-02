@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg container nav-custom">
+  <div class="d-flex">
+    <a class="navbar-brand" routerLink=""><span class="dungeon-master">🧙🏼‍♂️</span> Dungeon Master</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="''" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'dungeon'" routerLinkActive="active">Dungeon</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'old-dungeon'" routerLinkActive="active">Old Dungeon</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'raid'" routerLinkActive="active">Raid</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'faq'" routerLinkActive="active">FAQ</a>
+      </li>
+    </ul>
+  </div>
+  <div class=""><span class="badge badge-pill badge-dungeon">{{account ? account : ""}}</span></div>
+</nav>

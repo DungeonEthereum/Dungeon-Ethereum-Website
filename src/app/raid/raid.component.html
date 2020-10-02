@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <main class="text-center mt-5 mb-5">
+        <p class="dm-icon">🧙🏼‍♂️</p>
+        <h1 class="dm">Raid</h1>
+        <h3 class="dm-sub">Join the Raid at the right block to earn big rewards!</h3>
+        <h5 class="alert alert-danger">Raiding is not yet enabled! Do not send your knights!</h5>
+      </main>
+      <div class="d-flex align-self-center">
+        <div class="big-block p-3">
+          <table class="table table-borderless">
+            <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Loot Chest</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let x of chest | keyvalue">
+              <td>{{addressToName(x.key)}}</td>
+              <td>{{x.value}}</td>
+            </tr>
+            </tbody>
+          </table>
+          <button class="cell-button" *ngIf="claimableRewards" (click)="claimRewards()">
+            Claim Raid Loot
+          </button>
+        </div>
+        <div class="size24"></div>
+        <div class="big-block p-3">
+          <div class="" style="padding: 12px">
+            <p class="">Next raid at block {{nextRaidBlock}}</p>
+            <p class="">Your {{knights}} knights are ready to battle!</p>
+            <p class=""
+               *ngIf="raidJoinedResult !== null">{{raidJoinedResult ? "You did it! You joined the Raid at the right moment!" :
+                                                   "You missed the raid, your knights have been hurt in the process!"}}</p>
+            <button class="cell-button" *ngIf="knightsApproved" (click)="joinRaid()">
+              Join
+            </button>
+            <button class="cell-button" *ngIf="!knightsApproved" (click)="approve()">
+              Approve
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

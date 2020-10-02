@@ -11,13 +11,17 @@ import {NavComponent} from './nav/nav.component';
 import {DungeonDetailComponent} from './dungeon-detail/dungeon-detail.component';
 import {FooterComponent} from './footer/footer.component';
 import {MultiDungeonDetailComponent} from './multi-dungeon-detail/multi-dungeon-detail.component';
-import { RaidComponent } from './raid/raid.component';
+import {RaidComponent} from './raid/raid.component';
+import {OldDungeonComponent} from './old-dungeon/oldDungeon.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dungeon', component: DungeonComponent},
   {path: 'dungeon/:id', component: DungeonDetailComponent},
   {path: 'dungeon/multi/:id', component: MultiDungeonDetailComponent},
+  {path: 'old-dungeon', component: OldDungeonComponent},
+  {path: 'old-dungeon/:id', component: DungeonDetailComponent},
+  {path: 'old-dungeon/multi/:id', component: MultiDungeonDetailComponent},
   {path: 'raid', component: RaidComponent},
   {path: 'faq', component: FaqComponent},
 ];
@@ -28,6 +32,7 @@ const routes: Routes = [
     HomeComponent,
     ContainerComponent,
     DungeonComponent,
+    OldDungeonComponent,
     FaqComponent,
     NavComponent,
     DungeonDetailComponent,
