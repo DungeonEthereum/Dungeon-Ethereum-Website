@@ -1,37 +1,45 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-8">
-      <main class="text-center">
+  <div class="">
+    <div class="row justify-content-center">
+      <main class="col-10 text-center">
         <p class="dm-icon">{{pool.icon}}</p>
         <h1 class="dm">{{pool.header}}</h1>
         <h3 class="dm-sub">{{pool.text}}</h3>
       </main>
+    </div>
+    <div>
       <div class="mt-5">
         <div class="row justify-content-center">
-          <div class="col-4 cell">
-            <div class="cell-icon">{{pool.icon}}</div>
-            <h4 class="cell-header" *ngIf="token">{{token.pendingAmount}}</h4>
-            <p class="cell-text" *ngIf="token">{{token.name}}</p>
-            <div class="size24"></div>
-            <button class="cell-button" (click)="collect()">
-              Collect
-            </button>
+          <div class="col-lg-4 col-md-12">
+            <div class="cell">
+              <div class="cell-icon">{{pool.icon}}</div>
+              <h4 class="cell-header" *ngIf="token">{{token.pendingAmount}}</h4>
+              <div class="cell-text">
+                <p *ngIf="token">{{token.name}}</p>
+              </div>
+              <button class="cell-button" (click)="collect()">
+                Collect
+              </button>
+            </div>
           </div>
-          <div class="col-4 cell">
-            <div class="cell-icon">🧙🏼</div>
-            <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount}} / {{balance}}</h4>
-            <p class="cell-text">{{addressToName(pool.stakeAddress[0])}} Staked / Balance</p>
-            <div class="size24"></div>
-            <div class="row justify-content-between" style="padding: 0 16px">
-              <button class="cell-button" (click)="approve()" *ngIf="!approved">
-                Approve
-              </button>
-              <button *ngIf="approved && !pool.deprecated" class="cell-button w-45" (click)="deposit()">
-                +
-              </button>
-              <button *ngIf="approved" class="cell-button w-45" (click)="withdraw()">
-                -
-              </button>
+          <div class="col-lg-4 col-md-12">
+            <div class="cell">
+              <div class="cell-icon">🧙🏼</div>
+              <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount}} / {{balance}}</h4>
+              <div class="cell-text">
+                <p>{{addressToName(pool.stakeAddress[0])}} Staked / Balance</p>
+              </div>
+              <div class="row justify-content-between" style="padding: 0 16px">
+                <button class="cell-button" (click)="approve()" *ngIf="!approved">
+                  Approve
+                </button>
+                <button *ngIf="approved && !pool.deprecated" class="cell-button w-45" (click)="deposit()">
+                  +
+                </button>
+                <button *ngIf="approved" class="cell-button w-45" (click)="withdraw()">
+                  -
+                </button>
+              </div>
             </div>
           </div>
         </div>
