@@ -25,16 +25,15 @@ h4.dm-sub2 {
 }
 
 .big-block {
+  padding: 16px;
   box-shadow: rgb(240, 245, 249) 1px 1px 0px inset;
-  display: flex;
-  flex-direction: column;
+  display: block;
   background: rgb(201, 214, 223);
   border-width: 1px;
   border-style: solid;
   border-color: rgb(82, 97, 107);
   border-image: initial;
   border-radius: 12px;
-  flex: 1 1 0%;
 }
 
 div.size24 {
