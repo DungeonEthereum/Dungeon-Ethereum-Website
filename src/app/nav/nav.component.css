@@ -1,8 +1,8 @@
 .nav-custom {
   -webkit-box-align: center;
   align-items: center;
-  display: flex;
-  height: 72px;
+  display: block;
+  height: 10%;
   -webkit-box-pack: justify;
   justify-content: space-between;
   max-width: 1200px;

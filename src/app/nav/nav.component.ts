@@ -8,6 +8,7 @@ import {EthService} from '../services/eth.service';
 })
 export class NavComponent implements OnInit {
   account: string;
+  public isMenuCollapsed = true;
 
   constructor(private ethService: EthService) { }
 
