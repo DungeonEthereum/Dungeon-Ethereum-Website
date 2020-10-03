@@ -13,6 +13,7 @@ import {FooterComponent} from './footer/footer.component';
 import {MultiDungeonDetailComponent} from './multi-dungeon-detail/multi-dungeon-detail.component';
 import {RaidComponent} from './raid/raid.component';
 import {OldDungeonComponent} from './old-dungeon/oldDungeon.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -42,7 +43,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
