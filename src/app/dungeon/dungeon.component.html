@@ -1,7 +1,7 @@
 <div class="container">
   <div class="">
     <div class="mt-5 row justify-content-center">
-      <main class="col-8 text-center">
+      <main class="col-10 text-center">
         <p class="dm-icon">🧙🏼‍♂️</p>
         <h1 class="dm">Select your Challenge</h1>
         <h3 class="dm-sub">Earn Items by staking</h3>
@@ -9,16 +9,19 @@
     </div>
     <div class="mt-5">
       <div class="row">
-        <div class="cell" *ngFor="let pool of allPools">
-          <div class="cell-icon">{{pool.icon}}</div>
-          <div class="alert alert-danger" *ngIf="pool.deprecated">Withdraw</div>
-          <h4 class="cell-header">{{pool.header}}</h4>
-          <p class="cell-text">{{pool.text}}</p>
-          <div class="size24"></div>
-          <button class="cell-button" routerLink="{{pool.id}}">
-            Select
-          </button>
-          <p class="apy">APY <span class="font-italic">coming soon</span></p>
+        <div class="col-lg-4 col-md-12" *ngFor="let pool of allPools">
+          <div class="cell">
+            <div class="cell-icon">{{pool.icon}}</div>
+            <div class="alert alert-danger" *ngIf="pool.deprecated">Withdraw</div>
+            <h4 class="cell-header">{{pool.header}}</h4>
+            <div class="cell-text">
+              <p>{{pool.text}}</p>
+            </div>
+            <button class="cell-button" routerLink="{{pool.id}}">
+              Select
+            </button>
+            <p class="apy">APY <span class="font-italic">coming soon</span></p>
+          </div>
         </div>
       </div>
     </div>

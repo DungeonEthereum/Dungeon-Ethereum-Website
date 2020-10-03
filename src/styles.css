@@ -36,13 +36,12 @@ h4.dm-sub2 {
   border-radius: 12px;
 }
 
-div.size24 {
-  height: 24px;
-  width: 24px;
+div.big-block {
+  padding: 24px;
 }
 
 .cell {
-  margin: 12px;
+  margin: 12px 0;
   box-shadow: rgb(247, 244, 242) 1px 1px 0px inset;
   display: flex;
   flex-direction: column;
@@ -85,6 +84,11 @@ div.size24 {
   color: rgb(30, 32, 34);
 }
 
+div.cell-text {
+  color: rgb(30, 32, 34);
+  height: 4rem;
+}
+
 button.cell-button {
   -webkit-box-align: center;
   align-items: center;
@@ -101,8 +105,6 @@ button.cell-button {
   padding-left: 24px;
   padding-right: 24px;
   width: 100%;
-  border-width: 0px;
-  border-style: initial;
   border-color: initial;
   border-image: initial;
   border-radius: 12px;

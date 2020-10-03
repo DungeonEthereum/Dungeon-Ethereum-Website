@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-8">
+    <div class="col-10">
       <main class="text-center">
         <p class="dm-icon">{{pool.icon}}</p>
         <h1 class="dm">{{pool.header}}</h1>
@@ -11,31 +11,37 @@
       </main>
       <div class="mt-5">
         <div class="row justify-content-center">
-          <div class="col-4 cell">
-            <div class="cell-icon">{{pool.icon}}</div>
-            <h4 class="cell-header" *ngIf="token">{{token.pendingAmount}}</h4>
-            <p class="cell-text" *ngIf="token">{{token.name}}</p>
-            <div class="size24"></div>
-            <button class="cell-button" (click)="collect()">
-              Collect
-            </button>
+          <div class="col-lg-6 col-md-12">
+            <div class="cell">
+              <div class="cell-icon">{{pool.icon}}</div>
+              <h4 class="cell-header" *ngIf="token">{{token.pendingAmount}}</h4>
+              <div class="cell-text">
+                <p *ngIf="token">{{token.name}}</p>
+              </div>
+              <button class="cell-button" (click)="collect()">
+                Collect
+              </button>
+            </div>
           </div>
-          <div class="col-4 cell">
-            <div class="cell-icon">🧙🏼</div>
-            <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount}}</h4>
-            <p class="cell-text">Token staked</p>
-            <p><span *ngFor="let balance of balances">{{balance.tokenName}}: {{balance.tokenBalance}}<br></span></p>
-            <div class="size24"></div>
-            <div class="row justify-content-between" style="padding: 0 16px">
-              <button class="cell-button" (click)="approve()" *ngIf="!approved">
-                Approve
-              </button>
-              <button *ngIf="approved" class="cell-button w-45" (click)="deposit()">
-                +
-              </button>
-              <button *ngIf="approved" class="cell-button w-45" (click)="withdraw()">
-                -
-              </button>
+          <div class="col-lg-6 col-md-12">
+            <div class="cell">
+              <div class="cell-icon">🧙🏼</div>
+              <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount}}</h4>
+              <div class="cell-text">
+                <p>Token staked</p>
+              </div>
+              <p><span *ngFor="let balance of balances">{{balance.tokenName}}: {{balance.tokenBalance}}<br></span></p>
+              <div class="row justify-content-between" style="padding: 0 16px">
+                <button class="cell-button" (click)="approve()" *ngIf="!approved">
+                  Approve
+                </button>
+                <button *ngIf="approved" class="cell-button w-45" (click)="deposit()">
+                  +
+                </button>
+                <button *ngIf="approved" class="cell-button w-45" (click)="withdraw()">
+                  -
+                </button>
+              </div>
             </div>
           </div>
         </div>
