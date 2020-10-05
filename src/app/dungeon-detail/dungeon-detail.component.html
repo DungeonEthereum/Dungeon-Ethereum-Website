@@ -13,7 +13,7 @@
           <div class="col-lg-4 col-md-12">
             <div class="cell">
               <div class="cell-icon">{{pool.icon}}</div>
-              <h4 class="cell-header" *ngIf="token">{{token.pendingAmount}}</h4>
+              <h4 class="cell-header" *ngIf="token">{{token.pendingAmount | number: "1.0-2"}}</h4>
               <div class="cell-text">
                 <p *ngIf="token">{{token.name}}</p>
               </div>
@@ -25,7 +25,7 @@
           <div class="col-lg-4 col-md-12">
             <div class="cell">
               <div class="cell-icon">🧙🏼</div>
-              <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount}} / {{balance}}</h4>
+              <h4 class="cell-header" *ngIf="token">{{stakedAmount - burnAmount | number: "1.0-2"}} / {{balance | number:"1.0-2"}}</h4>
               <div class="cell-text">
                 <p>{{addressToName(pool.stakeAddress[0])}} Staked / Balance</p>
               </div>

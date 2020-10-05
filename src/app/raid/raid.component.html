@@ -18,7 +18,7 @@
             <tbody>
             <tr *ngFor="let x of chest | keyvalue">
               <td>{{addressToName(x.key)}}</td>
-              <td>{{x.value}}</td>
+              <td>{{x.value | number: "1.2-4"}}</td>
             </tr>
             </tbody>
           </table>
@@ -29,7 +29,7 @@
         <div class="p-3 col-lg-6 col-md-12">
           <div class="big-block">
             <p class="">Next raid at block {{nextRaidBlock}}</p>
-            <p class="">Your {{knights}} knights are ready to battle!</p>
+            <p class="">Your {{knights | number:"1.0-2"}} knights are ready to battle!</p>
             <p class=""
                *ngIf="raidJoinedResult !== null">{{raidJoinedResult ? "You did it! You joined the Raid at the right moment!" :
                                                    "You missed the raid, your knights have been hurt in the process!"}}</p>

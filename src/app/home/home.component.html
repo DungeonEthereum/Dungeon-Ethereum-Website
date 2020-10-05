@@ -5,7 +5,7 @@
         <div class="alert alert-primary">Check out the FAQ and Blog Post <a routerLink="faq">here</a></div>
         <p> 💎💎 Loot available:
           <span *ngFor="let x of chest | keyvalue">
-            {{x.value}} {{addressToName(x.key)}}
+            {{x.value | number : "1.0-2" }} {{addressToName(x.key)}}
           </span>
           💎💎</p>
       </div>
@@ -27,8 +27,8 @@
             <tbody>
             <tr *ngFor="let token of pendingTokens">
               <td class="p-05">{{token.name}}</td>
-              <td class="p-05">{{token.pendingAmount}}</td>
-              <td class="p-05">{{token.balance}}</td>
+              <td class="p-05">{{token.pendingAmount | number: "1.2-4"}}</td>
+              <td class="p-05">{{token.balance | number: "1.2-4"}}</td>
             </tr>
             </tbody>
           </table>
@@ -44,7 +44,7 @@
             <tbody>
             <tr *ngFor="let token of totalSupplyMap| keyvalue">
               <td class="p-05">{{addressToName(token.key)}}</td>
-              <td class="p-05">{{token.value}}</td>
+              <td class="p-05">{{token.value | number :"1.2-4"}}</td>
             </tr>
             </tbody>
           </table>
