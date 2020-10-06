@@ -396,8 +396,9 @@ export class EthService {
     for (const pool of pools) {
       const token = await (this.getPendingToken(pool.id));
       const foundToken = tokens.find(value => value.address === token.address);
+      
       if (foundToken) {
-        foundToken.balance += token.balance;
+        foundToken.pendingAmount += token.pendingAmount;
       }
       else {
         tokens.push(token);
