@@ -28,7 +28,9 @@
         </div>
         <div class="p-3 col-lg-6 col-md-12">
           <div class="big-block">
-            <p class="">Next raid at block {{nextRaidBlock}}</p>
+            <p *ngIf="nextRaidBlock > currentBlock">Next raid at block {{nextRaidBlock}}</p>
+            <p *ngIf="nextRaidBlock <= currentBlock">Last raid was at block {{nextRaidBlock}}</p>
+            <p *ngIf="nextRaidBlock > currentBlock">Blocks left until raid: {{nextRaidBlock - currentBlock}}</p>
             <p class="">Your {{knights | number:"1.0-2"}} knights are ready to battle!</p>
             <p class=""
                *ngIf="raidJoinedResult !== null">{{raidJoinedResult ? "You did it! You joined the Raid at the right moment!" :
