@@ -487,6 +487,10 @@ export class EthService {
     return await this.dm.raidBlock().then(val => val.toNumber());
   }
 
+  async getCurrentBlock(): Promise<number> {
+    return await window.web3.eth.getBlockNumber();
+  }
+
   async joinRaid(amount: number): Promise<boolean> {
     const account = await this.getAccount();
     const balanceBefore = await this.getBalance(Addresses.OldKnight);

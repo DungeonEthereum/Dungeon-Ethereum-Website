@@ -13,6 +13,7 @@ export class RaidComponent implements OnInit, OnDestroy {
   private interval: NodeJS.Timeout;
   chest: {};
   nextRaidBlock: number;
+  currentBlock: number;
   knights = 0;
   knightsApproved = false;
   raidJoinedResult: boolean = null;
@@ -40,6 +41,7 @@ export class RaidComponent implements OnInit, OnDestroy {
   async updateUI() {
     this.chest = await this.ethService.getChestAmount();
     this.nextRaidBlock = await this.ethService.nextRaidBlock();
+    this.currentBlock = await this.ethService.getCurrentBlock();
     this.knights = await this.ethService.getBalance(Addresses.Knight);
     const share = await this.ethService.getRaidShare();
     this.claimableRewards = share > 0;
